@@ -33,7 +33,6 @@ module.exports.createCampground = async (req, res) => {
     images,
   });
 
-  console.log(campground);
   req.flash("success", "Successfully made a new campground!");
   res.redirect(`/campgrounds/${campground._id}`);
 };
@@ -59,7 +58,7 @@ module.exports.updateCampground = async (req, res) => {
     ...req.body.campground,
     geometry: geoData.body.features[0].geometry,
   };
-  console.log(req.body);
+
   const campground = await Campground.findByIdAndUpdate(id, data, {
     runValidators: true,
     new: true,
