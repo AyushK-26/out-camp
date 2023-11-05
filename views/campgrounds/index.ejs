@@ -1,9 +1,8 @@
 <% layout("layouts/boilerplate") %>
 
-<div id="map" style="width: 100%; height: 500px"></div>
+<div id="cluster-map"></div>
 
-<h1>All Campgrounds</h1>
-<a href="/campgrounds/new">Add campground</a>
+<h1 class="mt-5 mb-3">All Campgrounds</h1>
 <% for(let campground of campgrounds) { %>
 <div class="card mb-3">
   <div class="row">
@@ -21,7 +20,11 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title"><%= campground.title %></h5>
-        <p class="card-text"><%= campground.description %></p>
+        <p class="card-text">
+          <%if(campground.description.length > 200) {%>
+          <%=campground.description.slice(0, 200) %>... <% } else { %>
+          <%=campground.description%> <% } %>
+        </p>
         <p class="card-text">
           <small class="text-muted"><%= campground.location %></small>
         </p>

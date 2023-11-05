@@ -2,7 +2,7 @@
 
 <div class="row">
   <h1 class="text-center">Edit Campground</h1>
-  <div class="col-6 offset-3">
+  <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
     <form
       class="validated-form"
       method="POST"
@@ -16,6 +16,7 @@
           class="form-control"
           type="text"
           name="campground[title]"
+          placeholder="Name of the campsite"
           value="<%= campground.title %>"
           id="title"
           required
@@ -29,6 +30,7 @@
           class="form-control"
           type="text"
           name="campground[location]"
+          placeholder="Provide complete address for precise mapping"
           value="<%= campground.location %>"
           id="location"
           required
@@ -39,7 +41,7 @@
       <div class="mb-3">
         <label class="form-label" for="price">Campground Price</label>
         <div class="input-group">
-          <span class="input-group-text" id="price-label">$</span>
+          <span class="input-group-text" id="price-label">&#8377; / day</span>
           <input
             class="form-control"
             type="text"
@@ -60,6 +62,7 @@
         <textarea
           class="form-control"
           name="campground[description]"
+          placeholder="Include details like facilities provided, contact information"
           id="description"
           required
         >
