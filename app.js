@@ -21,7 +21,7 @@ const usersRouter = require("./routes/users");
 const campgroundsRouter = require("./routes/campgrounds");
 const reviewsRouter = require("./routes/reviews");
 
-const dbUrl = "mongodb://127.0.0.1:27017/yelp-camp"; //process.env.DB_URL;
+const dbUrl = process.env.DB_URL; // "mongodb://127.0.0.1:27017/yelp-camp"; //process.env.DB_URL;
 
 main().catch((err) => {
   console.log(err);
